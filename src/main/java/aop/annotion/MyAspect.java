@@ -1,12 +1,7 @@
 package aop.annotion;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 
 /**
  * 切面
@@ -18,12 +13,34 @@ public class MyAspect {
 
   /**
    * 前置通知
+   * 定义过滤切入点函数时，是直接把execution已定义匹配表达式作为值传递给通知类型的如下
    */
   @Before (value = "execution(* aop.annotion.BusinessExcution.doAnnotion()))")
   public void before() {
     System.out.println("前置通知....");
   }
 
+  //************************************************************************************************//
+
+  /**
+   *   除了上述方式外，还可采用与ApectJ中使用pointcut关键字类似的方式定义切入点表达式如下，
+   *   使用@Pointcut注解：
+   */
+
+  /**
+   * 使用Pointcut定义切点
+   */
+  @Pointcut("execution(* aop.annotion.BusinessExcution.doAnnotion(..))")
+  private void myPointcut(){}
+
+  /**
+   * 应用切入点函数
+   */
+  @After(value="myPointcut()")
+  public void afterDemo(){
+    System.out.println("最终通知....");
+  }
+  //************************************************************************************************//
   /**
    * 后置通知
    * returnVal,切点方法执行后的返回值
