@@ -11,12 +11,27 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	</properties>
 
 	<dependencies>
-	
-	<dependency>
-	<groupId>org.json</groupId>
-  <artifactId>json</artifactId>
-  <version>20090211</version>
-	</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.3.9.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
@@ -42,17 +57,17 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<artifactId>commons-httpclient</artifactId>
 			<version>20020423</version>
 		</dependency>
-		
+
 		<dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpclient</artifactId>
-        <version>4.3.3</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-httpclient</groupId>
-        <artifactId>commons-httpclient</artifactId>
-        <version>3.1</version>
-      </dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>io.netty</groupId>
@@ -176,8 +191,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<artifactId>libthrift</artifactId>
 			<version>0.9.0</version>
 		</dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
 
-	</dependencies>
+  </dependencies>
 
 	<build>
 		<plugins>

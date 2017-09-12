@@ -11,31 +11,25 @@
           http://www.springframework.org/schema/aop    
           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
+	<!--aop的代码位置-->
 	<context:component-scan base-package="aop" />
 	<!-- 打开aop 注解 <aop:aspectj-autoproxy proxy-target-class="true"/> -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 	<!-- 系统服务组件的切面Bean -->
 	<!-- <bean id="serviceAspect" class="aop.annotation.AspectAdvice" /> -->
-	<bean id="writelog" class="org.spring.aop.WebResponseResultLogAop" />
-	<!-- <bean id="writelog2" class="com.spring.aop.WebResponseResultLogAop2"></bean> -->
+	<bean id="writelog" class="aop.WebResponseResultLogAop" />
+	<bean id="logAspect" class="aop.LogAspect"></bean>
 	<!-- <bean id="business" class="com.spring.aop.BusinessCode" /> -->
 
 	<!-- spring 的aop配置的切面只能在bean中定义了以后，才能够使用 -->
 	<aop:config proxy-target-class="true">
-		<!-- 首先声明的是切面 -->
-		<!-- <aop:pointcut id="log"
-			expression="execution(* com.spring.aop.BusinessCode.isLogin(..))" />
-		<aop:pointcut id="log2"
-			expression="execution(* com.spring.aop.BusinessCode.isLogin2(..))" /> -->
-		<!-- 用来定义只有一个通知和一个切入点的切面 -->
-		<!-- <aop:advisor advice-ref="writelog2" pointcut-ref="log2" /> -->
 		<!-- 用来定义切面，该切面可以包含多个切入点和通知，而且标签内部的通知和切入点定义是无序的；和advisor的区别就在此，advisor只包含一个通知和一个切入点 -->
-		<!-- <aop:aspect ref="writelog">
+		<aop:pointcut id="worklogAopMethod"
+			expression="execution(* aop.Business.doSomeThing(..))" />
+		<!-- <aop:aspect ref="logAspect">
 			<aop:before method="doBefore" pointcut-ref="log" />
 			<aop:after method="doAfter" pointcut-ref="log" />
 		</aop:aspect> -->
-		<aop:pointcut id="worklogAopMethod"
-			expression="execution(* aop.Business.doSomeThing(..))" />
 		<aop:advisor advice-ref="writelog" pointcut-ref="worklogAopMethod" />
 		<!-- 注意 pointcut ，advisor，aspect 之间的顺序 -->
 	</aop:config>

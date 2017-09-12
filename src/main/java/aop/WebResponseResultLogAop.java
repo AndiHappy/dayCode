@@ -1,4 +1,4 @@
-package org.spring.aop;
+package aop;
 
 import java.util.Arrays;
 

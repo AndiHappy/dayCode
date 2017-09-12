@@ -1,27 +1,27 @@
-package org.spring.aop;
+package aop;
 
-import org.springframework.context.ApplicationContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import aop.Business;
 
 /**
  * @author zhailz
  *
  * @time: 2017年9月12日 -- 上午9:40:45
  */
-public class SpringContext {
+public class SpringContextLoadXml {
+  public static final Logger logger = LoggerFactory.getLogger(SpringContextLoadXml.class);
+
 
   /**
    * @param args
    */
   public static void main(String[] args) {
     // 创建 Spring 容器
-    @SuppressWarnings("resource")
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("aop.xml");
+    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("aop.xml");
     Business p = ctx.getBean(Business.class);
     p.doSomeThing();
-    ctx.toString();
+    ctx.close();
   }
 
 }
