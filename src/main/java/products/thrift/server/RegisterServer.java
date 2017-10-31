@@ -25,16 +25,10 @@ public class RegisterServer implements BeanFactoryAware {
 
   // private static final Log log = LogFactory.getLog(RegisterServer.class);
   private static final Logger log = LoggerFactory.getLogger(RegisterServer.class);
-
   private Class<? extends TProcessor> thriftProcessorClass;
-
   private Class<?> serviceImplClass;
-
   private BeanFactory beanFactory;
-
   protected int port;
-
-  //    private static SelfUncaughtExceptionHandler su = new SelfUncaughtExceptionHandler();
 
   @Override
   public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
@@ -44,7 +38,6 @@ public class RegisterServer implements BeanFactoryAware {
   public void start() {
     new Thread() {
       public void run() {
-        //          this.setUncaughtExceptionHandler(su);
         startServerInternal();
       }
     }.start();
@@ -61,9 +54,9 @@ public class RegisterServer implements BeanFactoryAware {
       args.processor(process);
 
       args.selectorThreads(16);
-      // args.workerThreads(32);
-      // args.selectorThreads(Runtime.getRuntime().availableProcessors() + 1);
-      //cargs.acceptQueueSizePerThread(12);
+      args.workerThreads(32);
+      args.selectorThreads(Runtime.getRuntime().availableProcessors() + 1);
+      args.acceptQueueSizePerThread(12);
       args.workerThreads(64);
 
       TServer server = new TThreadedSelectorServer(args);
@@ -71,8 +64,7 @@ public class RegisterServer implements BeanFactoryAware {
           + " is starting on port " + port + " protocal = " + proFactory.getClass());
       server.serve();
 
-    }
-    catch (TTransportException e) {
+    } catch (TTransportException e) {
       log.error("Start server error!", e);
     }
   }

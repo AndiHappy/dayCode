@@ -6,7 +6,6 @@
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
-	<!-- <context:component-scan base-package="com.chanjet.imp.impmsg.service" /> -->
 
 	<bean id="registerServer" class="products.thrift.server.RegisterServer"
 		init-method="start">
@@ -17,19 +16,4 @@
 		<property name="port" value="10111" />
 	</bean>
 	<bean id="thriftService" class="products.thrift.server.ThriftServiceImpl" />
-	<!-- service work time -->
-
-
-	<!-- <bean id="nutcrackerCenter" class="com.chanjet.imp.cache.aop.NutcrackerCenterAop">
-		<property name="cachePath" value="/imp/redis"></property>
-	</bean> -->
-
-<!-- 	<bean id="workTimeCenter" class="com.chanjet.imp.utils.aoptime.WorkTimeCenter"></bean>-->	
-<!-- 调用方需要根据下面例子配置自己的扫描包路径 -->
-	<!-- <aop:config proxy-target-class="true">
-		<aop:pointcut id="workTimeCenterMethod"
-			expression="execution(* com.chanjet.imp.impmsg.service.ImpMsgServerImpl.*(..))" />
-		<aop:advisor advice-ref="workTimeCenter" pointcut-ref="workTimeCenterMethod" />
-	</aop:config> -->
-
 </beans>

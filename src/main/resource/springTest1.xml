@@ -5,12 +5,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
   			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
-	<context:annotation-config />
-	<context:component-scan base-package="products.spring.*" />
-	<context:component-scan base-package="aop.annotation.*" />
-	<aop:aspectj-autoproxy />
 	<!-- 默认的是单例模式 -->
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
-	<bean id="role" class="products.spring.Role" scope="singleton"></bean>
-<!-- 	<bean id="task" class="products.spring.TaskEntity"></bean> -->
+	<bean id="actor" class="spring.Actor" >
+		<property name="name" value="made"/>
+	</bean>
+
+	<bean id="role" class="spring.Role" scope="singleton">
+	 <!--注入变量 名字必须与类中的名字一样-->  
+        <property name="actorname"   ref="actor"></property>
+	</bean>
 </beans>
