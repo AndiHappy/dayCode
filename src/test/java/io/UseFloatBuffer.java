@@ -1,6 +1,7 @@
 package io;
 
 import java.nio.FloatBuffer;
+import java.nio.LongBuffer;
 
 /**
  * 使用 float 缓冲区。
@@ -13,6 +14,8 @@ public class UseFloatBuffer {
     public static void main(String[] args) {
         // 分配一个容量为10的新的 float 缓冲区
         FloatBuffer buffer = FloatBuffer.allocate(10);
+        LongBuffer longbuffer = LongBuffer.allocate(1000);
+        
         for (int i = 0; i < buffer.capacity(); i++) {
             float f = (float) Math.sin((((float) i) / 10) * (2 * Math.PI));
             buffer.put(f);
