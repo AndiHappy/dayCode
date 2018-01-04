@@ -28,7 +28,7 @@ public class TraditionalTimer {
 		
 	}
 
-	//1:�̶�ʱ���ִ��һ������1000�����ִ������(ִֻ��һ��)
+	//1:̶ʱִһ1000ִ(ִֻһ)
 	public static void test1() {
 		new Timer().schedule(new TimerTask() {
 			@Override
@@ -39,7 +39,7 @@ public class TraditionalTimer {
 		}, 1000);
 	}
 
-	// 2:5000�����ִ�������Ժ�ÿ��1000������ִ��һ������(����ִ��)
+	// 2:5000ִԺÿ1000ִһ(ִ)
 	public static void test2() {
 		new Timer().schedule(new TimerTask() {
 			@Override
@@ -51,7 +51,7 @@ public class TraditionalTimer {
 	}
 
 	
-	//3:��������������2��4�뽻���ִ��(����ִ��)��
+	//3:24뽻ִ(ִ)
 	static int count = 0;
 	public static void test3() {
 

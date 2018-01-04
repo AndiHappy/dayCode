@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-//ÏÔÊ¾UI
+//Ê¾UI
 public class View extends JPanel {
 
   private static final long serialVersionUID = 1L;
@@ -31,7 +31,7 @@ public class View extends JPanel {
     out = new JTextArea();
     out.setSize(new Dimension(100, 200));
     this.add(new JScrollPane(in), new GridLayout(1, 1));
-    this.add(new Button("·¢ËÍ"), new GridLayout(1, 2));
+    this.add(new Button(""), new GridLayout(1, 2));
     this.add(new JScrollPane(out), new GridLayout(1, 3));
     this.setSize(600, 200);
     this.setLocation(100, 200);

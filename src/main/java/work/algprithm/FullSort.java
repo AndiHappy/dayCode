@@ -5,15 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FullSort {  
-    //将NUM设置为待排列数组的长度即实现全排列  
     private static int NUM = 2;  
   
-    /** 
-     * 递归算法：将数据分为两部分，递归将数据从左侧移右侧实现全排列 
-     * 
-     * @param datas 
-     * @param target 
-     */  
     private static void sort(List<String> datas, List<String> target) {  
         if (target.size() == NUM) {  
             for (Object obj : target)  

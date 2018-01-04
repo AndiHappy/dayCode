@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author zhailz
  *
- * @Date 2015年10月17日 下午1:07:12
+ * @Date 20151017 1:07:12
  */
 public class ArrayQueue<E> {
 
@@ -26,7 +26,7 @@ public class ArrayQueue<E> {
     elements[tail] = e;
     int dex = (tail = (tail + 1) & (elements.length - 1));
     if (dex == head) {
-      System.out.println("队列已满，扩容。");
+      System.out.println("荨");
       // doubleCapacity();
     }
 
@@ -34,7 +34,7 @@ public class ArrayQueue<E> {
 
   public E popQueueHead() {
     if (elements.length <= 0) {
-      throw new IllegalAccessError("队列中没有元素");
+      throw new IllegalAccessError("没元");
     }
 
     int h = head;

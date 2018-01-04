@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * @author zhailzh
  * 
- * @Date 2015��10��30��������1:58:00
+ * @Date 201510301:58:00
  * 
- *       ����������
+ *       
  */
 public class BinarySortTree<E extends Comparable<?>> {
 

@@ -10,7 +10,6 @@ public class Al07StringContainDoubleAlapt {
 
   private long flag = 1 << (countbits - 2);
 
-  // 采用如果是针对26个英文字母的话，不适用其他的数据结构，我们可以使用位操作来搞定
   public boolean isUnique(String value) {
 
     if (value.length() > 26) {

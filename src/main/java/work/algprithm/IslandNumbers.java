@@ -3,9 +3,9 @@ package work.algprithm;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��3��������7:39:18
+ * @Date 20151137:39:18
  * 
- *       01 ���������
+ *       01 
  */
 public class IslandNumbers {
 
@@ -15,7 +15,7 @@ public class IslandNumbers {
 
     int islandNum = findIslandNums(islandData);
 
-    System.out.println("���еĵ�������" + islandNum);
+    System.out.println("еĵ" + islandNum);
   }
 
   private static int findIslandNums(int[][] islandData) {

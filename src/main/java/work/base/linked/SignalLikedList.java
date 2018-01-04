@@ -7,7 +7,7 @@ import java.util.List;
 import work.base.LinkedNode;
 
 /**
- * @author zhailzh µ¥Á´±í
+ * @author zhailzh 
  */
 public class SignalLikedList<E> {
 
@@ -31,12 +31,12 @@ public class SignalLikedList<E> {
     for (Object o : a) {
       @SuppressWarnings("unchecked")
       E e = (E) o;
-      if (first == null) { // Èç¹ûÊÇnull linkedlist
+      if (first == null) { // null linkedlist
         LinkedNode<E> newLinkedNode = new LinkedNode<E>(null, e, null);
         first = newLinkedNode;
         last = first;
       } else {
-        // Ìí¼ÓÔªËØ,Í·²å·¨
+        // Ôª,Í·å·¨
         LinkedNode<E> newLinkedNode = new LinkedNode<E>(null, e, first);
         first = newLinkedNode;
       }
@@ -46,7 +46,7 @@ public class SignalLikedList<E> {
   }
 
   /**
-   * index Î»ÖÃÖ®ºóÔö¼Ó m¸öÔªËØµÄÊı¾İÔªËØ
+   * index Î»Ö® mÔªØµÔª
    */
   private boolean addAll(int index, Collection<? extends E> c) {
     checkPositionIndex(index);
@@ -55,7 +55,7 @@ public class SignalLikedList<E> {
     if (numNew == 0)
       return false;
     LinkedNode<E> pred, succ;
-    // È·¶¨index ºÍ index µÄÇ°Ò»¸öÎ»ÖÃ
+    // È·index  index Ç°Ò»Î»
     if (index == size) {
       succ = null;
       pred = last;
@@ -87,7 +87,7 @@ public class SignalLikedList<E> {
     return true;
   }
 
-  // ²éÕÒµÚn¸ö½Úµã
+  // ÒµnÚµ
   public LinkedNode<E> node(int index) {
     if (index > -1) {
       LinkedNode<E> x = first;
@@ -119,7 +119,7 @@ public class SignalLikedList<E> {
       LinkedNode<E> newLinkedNode = new LinkedNode<E>(null, e, null);
       first = newLinkedNode;
     } else {
-      // Ìí¼ÓÔªËØ,Í·²å·¨
+      // Ôª,Í·å·¨
       LinkedNode<E> newLinkedNode = new LinkedNode<E>(null, e, first);
       first = newLinkedNode;
     }

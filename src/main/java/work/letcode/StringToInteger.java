@@ -3,7 +3,7 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��3��������10:15:21
+ * @Date 201512310:15:21
  * 
  */
 public class StringToInteger {

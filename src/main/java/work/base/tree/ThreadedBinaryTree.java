@@ -6,15 +6,14 @@ import java.util.List;
 /**
  * @author zhailz
  *
- * @Date 2015年10月21日 下午12:01:05
+ * @Date 20151021 12:01:05
  * 
- *       线索二叉树
+ *       
  */
 public class ThreadedBinaryTree<E> {
 
   private ThreadedLinked root;
 
-  // 线索二叉树的节点
   private class ThreadedLinked {
     TreeNode node;
     private int ltag;
@@ -73,7 +72,7 @@ public class ThreadedBinaryTree<E> {
     }
   }
 
-  // 建立中序的线索二叉树
+  // 
   public ThreadedBinaryTree<E> buildMiddleThreadTree(BinaryTree<E> tree) {
     ThreadedBinaryTree<E> ttree = new ThreadedBinaryTree<E>();
     TreeNode node = tree.getRoot();
@@ -110,7 +109,7 @@ public class ThreadedBinaryTree<E> {
   }
 
   /**
-   * node的中序遍历的后继节点
+   * node暮探诘
    * 
    * @param midnodes
    */
@@ -123,7 +122,7 @@ public class ThreadedBinaryTree<E> {
   }
 
   /**
-   * node的中序遍历的前驱节点
+   * node前诘
    * 
    * @param midnodes
    */

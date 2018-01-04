@@ -5,9 +5,9 @@ import java.util.Arrays;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��12��������9:40:56
+ * @Date 201511129:40:56
  * 
- *       KMP ������һ���ַ������ҵ�һ�����ϵıȽ϶̵��ַ�����p��ƥ���λ��
+ *       KMP һַҵһϵıȽ϶̵ַpƥλ
  */
 public class KMP {
 
@@ -18,9 +18,9 @@ public class KMP {
 	System.out.println(Arrays.toString(getnext("ABCDABD".toCharArray())));
     }
 
-    // ���Ĺ���ǰ׺��׺������
-    // Ϊʲô��������ǰ׺�ͺ�׺��˵����Ϊ��ƥ���ʱ�򣬲���i���ݣ��������Ǳ���
-    // ȷ��i��ʼ��λ�á�
+    // Ĺǰ׺׺
+    // Ϊʲôǰ׺ͺ׺˵Ϊƥʱ򣬲iݣǱ
+    // ȷiʼλá
     public static int[] getNext(char[] p) {
 	int[] next = new int[p.length];
 	next[0] = -1;
@@ -39,12 +39,12 @@ public class KMP {
 	return next;
     }
 
-    // ʹ�õݹ�ķ����ҵ�next��ֵ������next�ĳ�ʼ����next[0]Ϊ-1��
-    // ֪��next[j] = k ��˵��*p0,p1,p2,..pk-1*,pk,....*pn-(k-1),...,pn-1 ,pn-0*
-    // ˵������*֮���Ԫ������ȵģ�����������next[j+1]
+    // ʹõݹķҵnextֵnextĳʼnext[0]Ϊ-1
+    // ֪next[j] = k ˵*p0,p1,p2,..pk-1*,pk,....*pn-(k-1),...,pn-1 ,pn-0*
+    // ˵*֮Ԫȵģnext[j+1]
     // *p0,p1,p2,..pk-1*,pk,pk+1,...pn-(k),*pn-(k-1),...,pn-1 ,pn-0*
-    // ֻ��Ҫ�Ƚ�pk,�� pn-k����
-    // �������ȣ���ݹ鵽k-1�����
+    // ֻҪȽpk, pn-k
+    // ȣݹ鵽k-1
     public static int[] getnext(char[] p) {
 	int pLen = p.length;
 	int next[] = new int[pLen];
@@ -52,7 +52,7 @@ public class KMP {
 	int k = -1;
 	int j = 0;
 	while (j < pLen - 1) {
-	    // p[k]��ʾǰ׺��p[j]��ʾ��׺
+	    // p[k]ʾǰ׺p[j]ʾ׺
 	    if (k == -1 || p[j] == p[k]) {
 		++k;
 		++j;
@@ -65,7 +65,7 @@ public class KMP {
 	return next;
     }
 
-    // ���������ķ���
+    // ķ
     public static int getTraverseindex2(String target, String pattern) {
 	if (target != null && pattern != null) {
 	    char[] tar = target.toCharArray();
@@ -81,9 +81,9 @@ public class KMP {
 		     * i=i-(j-1); <br/>
 		     * abcdefg<br/>
 		     * abcdh<br/>
-		     * �����Ǹ���j�ߵ�λ�ã�i����ߣ����ǻ��ݣ�ֱ��дi++�������һ�ֲ���ȷ��д��
-		     * ��Ϊi��һֱ�ĵ�����û��һ�����ݵĹ��� ������������£�"BBC ABCDAB ABCDABCDABD",
-		     * "ABCDABD" ���е�17��λ�ã��ͻ�ֱ�ӵ����ӣ������ƥ���λ��
+		     * Ǹjߵλãiߣǻݣֱдi++һֲȷд
+		     * ΪiһֱĵûһݵĹ £"BBC ABCDAB ABCDABCDABD",
+		     * "ABCDABD" е17λãͻֱӵӣƥλ
 		     */
 		    i = i - (j - 1);
 		    // i++;
@@ -99,16 +99,16 @@ public class KMP {
 
     }
 
-    // ���������ķ���
+    // ķ
     public static int getTraverseindex1(String target, String pattern) {
 	if (target != null && pattern != null) {
 	    char[] tar = target.toCharArray();
 	    char[] pat = pattern.toCharArray();
 
-	    // �������ҵ���һ���ַ���ȵ�λ��
+	    // ҵһַȵλ
 	    for (int i = 0; i < tar.length; i++) {
 		char c = tar[i];
-		// �������ַ���pattern�����ַ����
+		// ַpatternַ
 		if (c == pat[0]) {
 		    int j = 1;
 		    boolean index = true;

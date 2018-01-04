@@ -3,7 +3,7 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��11��������10:10:17
+ * @Date 2015121110:10:17
  * 
  */
 public class ContainerWithMostWater {
@@ -24,7 +24,7 @@ public class ContainerWithMostWater {
 	}
 
 	/**
-	 * �������������Ҫ
+	 * Ҫ
 	 * */
 	public static int maxArea(int[] height) {
 	    int maxA = 0;
@@ -46,7 +46,7 @@ public class ContainerWithMostWater {
 	    return maxA;
 	}	
 	
-	//�ݹ���㷨����������
+	//ݹ㷨
 	public static int maxArea2(int[] height) {
 		return maxAreabyDP(height,height.length -1);
 	}
@@ -78,9 +78,9 @@ public class ContainerWithMostWater {
 
 
 	public int maxArea1(int[] height) {
-		// ������ĸ�������
+		// ĸ
 		int[] flags = new int[height.length - 1];
-		// flag�������һ������
+		// flagһ
 		for (int i = 1; i < height.length; i++) {
 			int first = height[i - 1];
 			int seconde = height[i];

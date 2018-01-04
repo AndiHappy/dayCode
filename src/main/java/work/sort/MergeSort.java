@@ -2,10 +2,6 @@ package work.sort;
 
 import java.util.Arrays;
 
-/**
- * ÌØµã£ºstable sort¡¢Out-place sort Ë¼Ïë£ºÔËÓÃ·ÖÖÎ·¨Ë¼Ïë½â¾öÅÅĞòÎÊÌâ¡£ ×î»µÇé¿öÔËĞĞÊ±¼ä£ºO(nlgn)
- * ×î¼ÑÔËĞĞÊ±¼ä£ºO(nlgn)
- */
 public class MergeSort {
 
   public static void main(String[] args) {
@@ -26,7 +22,7 @@ public class MergeSort {
 
   private static int[] arrayMergeSort(int[] arrays, int i, int j) {
     if (i < 0 || j > arrays.length - 1) {
-      throw new IllegalArgumentException("´«ÈëµÄ²ÎÊı£¬³¬³öÁËÊı×éµÄ·¶Î§");
+      throw new IllegalArgumentException(" ");
     }
     if (i < j) {
 
@@ -42,7 +38,7 @@ public class MergeSort {
   }
 
   /**
-   * i ¿ªÊ¼ j ½áÊø m ÖĞ¼ä Ê¹ÓÃ±êÖ¾Î»µÄËã·¨
+   * i Ê¼ j  m Ğ¼ Ê¹Ã±Ö¾Î»ã·¨
    */
   public static void arrayMergeSortContent(int[] arrays, int i, int m, int j) {
     int first = m - i + 1;
@@ -51,14 +47,14 @@ public class MergeSort {
     int[] firsta = new int[first + 1];
     int[] seconda = new int[second + 1];
 
-    // ³õÊ¼»¯
+    // Ê¼
     for (int k = i; k <= m; k++) {
       firsta[k - i] = arrays[k];
     }
     for (int k = m + 1; k <= j; k++) {
       seconda[k - m - 1] = arrays[k];
     }
-    // ±êÖ¾Î»
+    // Ö¾Î»
     firsta[first] = Integer.MAX_VALUE;
     seconda[second] = Integer.MAX_VALUE;
 
@@ -76,7 +72,7 @@ public class MergeSort {
   }
 
   /**
-   * i ¿ªÊ¼ j ½áÊø m ÖĞ¼ä ²»ÊÊÓÃÊ¹ÓÃ±êÖ¾Î»µÄËã·¨
+   * i Ê¼ j  m Ğ¼ Ê¹Ã±Ö¾Î»ã·¨
    */
   public static void arrayMergeSortContentNoFlag(int[] arrays, int i, int m, int j) {
     int first = m - i + 1;
@@ -85,7 +81,7 @@ public class MergeSort {
     int[] firsta = new int[first];
     int[] seconda = new int[second];
 
-    // ³õÊ¼»¯
+    // Ê¼
     for (int k = i; k <= m; k++) {
       firsta[k - i] = arrays[k];
     }

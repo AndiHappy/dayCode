@@ -3,7 +3,7 @@ package work.base;
 import java.util.Arrays;
 
 /**
- * @author zhailzh 大顶堆的操作
+ * @author zhailzh 
  */
 public class Heap {
 
@@ -30,15 +30,14 @@ public class Heap {
     return arrays;
   }
 
-  // 保持堆的性质
   private static void mainMINHeap(int[] arrays, int i, int length) {
-    // 左子树
+    // 
     int minest = i;
     if (left(i) < length && arrays[left(i)] < arrays[minest]) {
       minest = left(i);
     }
 
-    // 右子树
+    // 
     if (right(i) < length && arrays[right(i)] < arrays[minest]) {
       minest = right(i);
     }
@@ -64,9 +63,8 @@ public class Heap {
     return arrays;
   }
 
-  // 保持堆的性质
   private static void mainMAXHeap(int[] arrays, int i, int length) {
-    // 左子树
+    // 
     int largest = i;
     if (left(i) < length && arrays[left(i)] > arrays[largest]) {
       largest = left(i);

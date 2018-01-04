@@ -5,7 +5,7 @@ import javax.management.DescriptorKey;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��16��������2:17:16 ��Ļ��Ĵ�
+ * @Date 201511162:17:16 ĻĴ
  * 
  */
 public class LongestPalindromicSubstring {
@@ -16,7 +16,7 @@ public class LongestPalindromicSubstring {
 		System.out.println(lo.longestPalindrome(value));
 	}
 	
-	//��̬�滮��ʲôʱ��ʹ�ö�̬�滮��������Լ�����һ��ä��
+	//̬滮ʲôʱʹö̬滮Լһä
 	//
 	public String longestPalindrome(String s) {
 		  int n = s.length();
@@ -37,7 +37,7 @@ public class LongestPalindromicSubstring {
 		  return res;
 		}
 
-	//�����ƽ�,ֱ�ӵĳ�ʱ
+	//ƽ,ֱӵĳʱ
 	@Deprecated
 	public String longestPalindrome_isWrong(String s) {
 		int temp = 0;int tempi = 0; int tempj = 0;

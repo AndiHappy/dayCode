@@ -7,9 +7,9 @@ import java.util.List;
 /**
  * @author zhailzh
  * 
- * @Date 2016��1��20��������9:06:58
+ * @Date 20161209:06:58
  * 
- *       �绰�������������ĸ�����
+ *       绰ĸ
  */
 public class LetterCombinationsofaPhoneNumber {
 	
@@ -50,7 +50,7 @@ public class LetterCombinationsofaPhoneNumber {
 		if (digits == null || digits.isEmpty()) {
 			return res;
 		}
-		//ʹ��ѭ���ķ���
+		//ʹѭķ
 		for (int i = 0; i < digits.length(); i++) {
 			int value = digits.charAt(i)-'0';
 			if(value >1){
@@ -104,7 +104,7 @@ public class LetterCombinationsofaPhoneNumber {
 		return null;
 	}
 	/**
-	 * �����Ľ������
+	 * Ľ
 	 * 
 	 */
 
@@ -122,7 +122,7 @@ public class LetterCombinationsofaPhoneNumber {
 			}
 		}
 
-		// ���ݵĽṹ�������ص�ǰ��Ļ�����ĺͺ����һ��Ԫ�ؽ��н�ϣ�ʹ�õ�������
+		// ݵĽṹصǰĻĺͺһԪؽнϣʹõ
 		forEach(res, collections, 0, temp1);
 		return res;
 	}

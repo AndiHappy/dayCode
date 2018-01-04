@@ -27,18 +27,6 @@ public class DataFromFile {
     System.out.println(Arrays.toString(arr));
   }
 
-  /**
-   * 创建操作的数据
-   * 
-   * @param num
-   *          创建数字的个数
-   * @param min
-   *          范围最小值
-   * @param max
-   *          范围最大值
-   * @param fileName
-   *          文件的名称
-   */
   public static File creatIntData(int num, int min, int max, File file) {
 
     try {
@@ -65,16 +53,6 @@ public class DataFromFile {
     return file;
   }
 
-  /**
-   * 创建操作的数据
-   * 
-   * @param begine
-   *          开始读取数据的位置
-   * @param length
-   *          读取数据的位置
-   * @param fileName
-   *          读取数据所在的文件
-   */
   public static int[] readIntDataByBytes(int begine, int length, File fileName) {
     int[] readData = new int[length];
     try {
@@ -104,17 +82,6 @@ public class DataFromFile {
 
     return readData;
   }
-
-  /**
-   * 创建操作的数据
-   * 
-   * @param begine
-   *          开始读取数据的位置
-   * @param length
-   *          读取数据的位置
-   * @param fileName
-   *          读取数据所在的文件
-   */
   public static int[] readIntData(int begine, int length, File fileName) {
     int[] readData = new int[length];
     try {
@@ -145,16 +112,6 @@ public class DataFromFile {
     return readData;
   }
 
-  /**
-   * 创建操作的数据
-   * 
-   * @param begine
-   *          开始读取数据的位置
-   * @param length
-   *          读取数据的位置
-   * @param fileName
-   *          读取数据所在的文件
-   */
   public static int[] readIntData(int begine, int length) {
 
     File file = new File("intData.txt");

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��20��������4:50:24
+ * @Date 201512204:50:24
  * 
  */
 public class Lettcode3Sum {
@@ -18,8 +18,8 @@ public class Lettcode3Sum {
 	// of zero.
 	//
 	// Note:
-	// Elements in a triplet (a,b,c) must be in non-descending order. (ie, a �� b
-	// �� c)
+	// Elements in a triplet (a,b,c) must be in non-descending order. (ie, a  b
+	//  c)
 	// The solution set must not contain duplicate triplets.
 	// For example, given array S = {-1 0 1 2 -1 -4},
 	//
@@ -28,23 +28,23 @@ public class Lettcode3Sum {
 	// (-1, -1, 2)
 	//
 	/***
-	 * �����Լ��뵽����0��Ϊ�����������Ȼ����������ź����Ժ��ҵ������������ļ����λ�ã�Ȼ��������λ�ã���ѡ�� �ߵ�Ԫ�ء�
+	 * Լ뵽0ΪȻźԺҵļλãȻλãѡ ߵԪء
 	 * 
-	 * ���Եķ����Լ������ˣ�����������������û�����⣬�����ź��������Ǿ��ܹ���ʣ�µ�����Ԫ�������������ƵĲ�����
+	 * ԵķԼˣû⣬źǾܹʣµԪƵĲ
 	 */
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
-		// �����ݿ�ʼ����
+		// ݿʼ
 		Arrays.sort(nums);
-		// Ȼ��������ѭ����ȷ����һ��ֵ���ڶ���ֵ�͵�����ֵ�ĺ;�����
+		// Ȼѭȷһֵڶֵ͵ֵĺ;
 		for (int i = 0; i < nums.length - 2; i++) {
-			//����������Ƶķǳ�������˼
+			//Ƶķǳ˼
 			if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
 				int from = i + 1;
 				int end = nums.length - 1;
 				int sumt = 0 - nums[i];
 				while (from < end) {
-					// ������
+					// 
 					int temp = nums[from] + nums[end];
 					if (sumt == temp) {
 						res.add(Arrays.asList(nums[i], nums[from], nums[end]));

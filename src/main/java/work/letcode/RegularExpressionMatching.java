@@ -3,7 +3,7 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��8��������4:11:06
+ * @Date 20151284:11:06
  * 
  */
 public class RegularExpressionMatching {
@@ -19,13 +19,13 @@ public class RegularExpressionMatching {
 	// bool isMatch(const char *s, const char *p)
 	//
 	// Some examples:
-	// isMatch("aa","a") �� false
-	// isMatch("aa","aa") �� true
-	// isMatch("aaa","aa") �� false
-	// isMatch("aa", "a*") �� true
-	// isMatch("aa", ".*") �� true
-	// isMatch("ab", ".*") �� true
-	// isMatch("aab", "c*a*b") �� true
+	// isMatch("aa","a")  false
+	// isMatch("aa","aa")  true
+	// isMatch("aaa","aa")  false
+	// isMatch("aa", "a*")  true
+	// isMatch("aa", ".*")  true
+	// isMatch("ab", ".*")  true
+	// isMatch("aab", "c*a*b")  true
 
 	public static boolean isMatch(String s, String p) {
 		if (s == null && p == null)
@@ -41,10 +41,10 @@ public class RegularExpressionMatching {
 	
 
 	public static boolean isMatch(String s, int sstart, String p, int pstart) {
-		//�ϸ��λ�ñȶ�
+		//ϸλñȶ
 		if (s.length() == sstart && p.length() == pstart)
 			return true;
-		//pstart��λ���������p.length() -1 ��ֱ�ӵı�������
+		//pstartλp.length() -1 ֱӵı
 		if (p.length() == pstart)
 			return false;
 		if (s.length() == sstart) {
@@ -52,13 +52,13 @@ public class RegularExpressionMatching {
 			if (pstart + 1 >= p.length() || p.charAt(pstart + 1) != '*') {
 				return false;
 			}
-			//���������* ����Ҫ�ѱȶԵ�λ��Ǩ��2
+			//* ҪѱȶԵλǨ2
 			return isMatch(s, sstart, p, pstart + 2);
 		}
 		
-		//*ƥ�����ǰ׺
+		//*ƥǰ׺
 		if (pstart + 1 <= p.length() - 1 && p.charAt(pstart + 1) == '*') {
-			//����.* ���������Ҫ�ȶԵ������ֵ����
+			//.* ҪȶԵֵ
 			if (s.charAt(sstart) == p.charAt(pstart) || p.charAt(pstart) == '.') {
 				return isMatch(s, sstart + 1, p, pstart) || isMatch(s, sstart, p, pstart + 2);
 			}

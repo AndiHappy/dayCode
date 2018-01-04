@@ -5,18 +5,18 @@ import java.util.Arrays;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��1��������2:28:11 �ַ���ת��
+ * @Date 20151212:28:11 ַת
  */
 public class ZigZagConversion {
 
 	public static String convert(String s, int numRows) {
 	    if(numRows<=1) return s;
 	    StringBuilder sb = new StringBuilder();
-	    //ѭ��������
+	    //ѭ
 	    int guilushu = 2*(numRows -1);
 	    
 	    for (int i = 0; i < numRows; i++) {
-			//��s�б����������е�����
+			//sбе
 	    	for (int j = i; j < s.length(); j++) {
 	    		if(j%guilushu  == i || j%guilushu == (guilushu - i)){
 	    			System.out.print(" "+j);
@@ -29,7 +29,7 @@ public class ZigZagConversion {
 	}
 	
 	/**
-	 * ͨ���ռ���л�ȡ�ٶ�
+	 * ͨռлȡٶ
 	 * */
 	public String convertbyKongJian(String s, int nRows) {
         if(nRows <= 1)

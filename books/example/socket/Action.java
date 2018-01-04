@@ -8,7 +8,7 @@ public class Action implements PropertyChangeListener {
   private View view = null;
   private Model model = null;
 
-  // 触发其他的业务逻辑
+  // 业呒
   private TalkClient client = new TalkClient();
 
   public Action(View view, Model model) {
@@ -17,7 +17,7 @@ public class Action implements PropertyChangeListener {
   }
 
   public void propertyChange(PropertyChangeEvent evt) {
-    System.out.println("触发事件：  " + evt.getPropertyName());
+    System.out.println("录  " + evt.getPropertyName());
     if (evt.getPropertyName().equalsIgnoreCase("view")) {
       this.getView().getIn().setText("");
       String value = (String) evt.getNewValue();

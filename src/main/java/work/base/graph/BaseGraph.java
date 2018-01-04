@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @author zhailzh
  * 
- * @Date 2015��10��26��������1:55:20 ͼ�ı�ʾ����
+ * @Date 201510261:55:20 ͼıʾ
  */
 public class BaseGraph {
 
@@ -13,11 +13,11 @@ public class BaseGraph {
 
 	private Boolean[] visited = null;
 
-	// ���ݶ���ĸ���������ͼ����Ҫ����������Ǳ�
+	// ݶĸͼҪǱ
 	public BaseGraph(int pointNum) {
 		edgs = new int[pointNum][pointNum];
 		visited = new Boolean[pointNum];
-		// ��ʼ��
+		// ʼ
 		for (int i = 0; i < edgs.length; i++) {
 			for (int j = 0; j < edgs.length; j++) {
 				edgs[i][j] = 0;
@@ -54,19 +54,19 @@ public class BaseGraph {
 	}
 
 	/**
-	 * ��ȵ����ȱ���
+	 * ȵȱ
 	 */
 	private String dps() {
-		// ���㿪ʼ����
+		// 㿪ʼ
 		Stack<Integer> theStack = new Stack<Integer>();
 		theStack.push(0);
 		visited[0] = true;
 		String temp = "0";
 
 		while (!theStack.isEmpty()) {
-			//�ҵ�����ڵ���ڽڵ㣬���û���ڽڵ�Ļ�����ֱ�ӵĵ���
+			//ҵڵڽڵ㣬ûڽڵĻֱӵĵ
 			int v = getAdjUnvisitedVertex(theStack.peek());
-			// ����ڽڵ�û�б����ʹ�
+			// ڽڵûбʹ
 			if (v != -1 && !visited[v]) {
 				theStack.push(v);
 				visited[theStack.peek()] = true;
@@ -80,7 +80,7 @@ public class BaseGraph {
 
 	}
 
-	// �ڽڵ��Ƿ񱻷��ʹ�
+	// ڽڵǷ񱻷ʹ
 	private int getAdjUnvisitedVertex(Integer peek) {
 		for (int i = 0; i < visited.length; i++) {
 			if (edgs[peek][i] != 0 && !visited[i]) {

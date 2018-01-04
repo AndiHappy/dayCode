@@ -1,7 +1,7 @@
-µÚ¶þÕÂ£º
-1. shell ÃüÁîÈç¹ûºóÃæÊÇ £» shell»áÒÀ´ÎµÄÖ´ÐÐÃüÁî£¬Èç¹û×îºóÊÇ&£¬ËµÃ÷shell½«ÔÚºóÌ¨Ö´ÐÐÇ°ÃæµÄÃüÁî£¬ÕâËµÃ÷shell²»»áµÈµ½¸ÃÃüÁîÖ´ÐÐ½áÊø£¬¾Í»áÖ´ÐÐÏÂÒ»ÌõµÄÃüÁî¡£  
+Ú¶Â£
+1. shell   shellÎµÖ´î£¬&ËµshellÚºÌ¨Ö´Ç°î£¬ËµshellÈµÖ´Ð½Í»Ö´Ò»î¡£  
 2.  ls | grep nu
-ls²úÉúµÄ½á¹û£¬×÷Îªgrep ±ê×¼µÄÊäÈë
+lsÄ½Îªgrep ×¼
 
 
-3 °Ñ×Ô¼ºµÄ½Å±¾¼ÓÈëbinÄ¿Â¼ÏÂ
+3 Ô¼Ä½Å±binÄ¿Â¼

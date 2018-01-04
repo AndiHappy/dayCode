@@ -30,7 +30,7 @@ public class ClientContainer extends JPanel {
     add(this.view);
   }
 
-  // 模型数据启动前的设置
+  // 模前
   private void resetModel() {
     action = new Action(this.view, this.model);
   }

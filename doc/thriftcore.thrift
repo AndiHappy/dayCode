@@ -3,16 +3,16 @@ namespace java products.thrift
 #include "../../imp_message_core/doc/impMsg.thrift"
 #include "../../imp_message_core/doc/impMsgService.thrift"
 
-	#²¼¶ûĞÍ·µ»ØÖµ
+	#Í·Öµ
 struct BooleanResult{
-	1:optional bool result;	#·µ»Ø½á¹û
-	2:optional i32 err_code;	#Òì³£±àÂë
-	3:optional string err_msg;	#Òì³£ÏûÏ¢
+	1:optional bool result;	#Ø½
+	2:optional i32 err_code;	#ì³£
+	3:optional string err_msg;	#ì³£Ï¢
 }
 
 service ThriftService {	
 	
-	# ¼ì²éserverÊÇ·ñÕı³£
+	# serverÇ·
 	BooleanResult serverState(1:string userid)
 }
 

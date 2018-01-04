@@ -2,9 +2,6 @@ package work.sort;
 
 import java.util.Arrays;
 
-/**
- * 特性：In-place sort，unstable sort。 思想：每次找一个最小值。 最好情况时间：O(n^2)。 最坏情况时间：O(n^2)。
- */
 public class SelectSort {
 
   public static void main(String[] args) {

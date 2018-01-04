@@ -1,8 +1,5 @@
 package work.base.tree;
 
-/**
- * Á´±í
- */
 public class LinkedListNode<E> {
 
   transient Node<E> first;

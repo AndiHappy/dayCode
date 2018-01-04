@@ -6,12 +6,13 @@ import java.util.List;
 
 import work.base.ArrayQueue;
 
+
 /**
  * @author zhailz
  *
- * @Date 2015年10月19日 下午3:45:22
+ * @Date 20151019 3:45:22
  * 
- *       二叉树
+ *       
  */
 public class BinaryTree<E> {
 
@@ -52,7 +53,7 @@ public class BinaryTree<E> {
         setRightNode(i, a, root);
       }
     } else {
-      throw new IllegalArgumentException("根元素不为空，不能够直接的使用集合元素来进行构建。");
+      throw new IllegalArgumentException("元夭为眨芄直拥使眉元泄");
     }
 
   }
@@ -131,7 +132,7 @@ public class BinaryTree<E> {
   }
 
   /**
-   * 先序输出
+   * 
    */
   public String toFirstString() {
 
@@ -180,7 +181,7 @@ public class BinaryTree<E> {
   }
 
   /**
-   * 先序输出
+   * 
    */
   public String toLastString() {
 
@@ -190,7 +191,6 @@ public class BinaryTree<E> {
     return null;
   }
 
-  // 层次遍历
   private String toLeavel(ArrayQueue<TreeNode> queue) {
     String temp = null;
     while (!queue.isEmpty()) {
@@ -211,7 +211,7 @@ public class BinaryTree<E> {
   }
 
   /**
-   * 层次遍历
+   * 伪
    */
   public String toLevelString() {
     ArrayQueue<TreeNode> queue = new ArrayQueue<TreeNode>();
@@ -219,12 +219,12 @@ public class BinaryTree<E> {
       queue.add(root);
       return toLeavel(queue);
     } else {
-      throw new IllegalAccessError("根元素为null。");
+      throw new IllegalAccessError("元为null");
     }
   }
 
   /**
-   * 中序遍历输出
+   * 
    */
 
   public String toMiddleString() {
@@ -257,7 +257,7 @@ public class BinaryTree<E> {
   }
 
   /**
-   * 中序输出
+   * 
    */
   private String toMidString(TreeNode node) {
     String temp = null;

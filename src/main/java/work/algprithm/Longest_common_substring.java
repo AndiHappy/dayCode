@@ -3,7 +3,7 @@ package work.algprithm;
 /**
  * @author zhailzh
  * 
- * @Date 2016��2��25��������2:57:05
+ * @Date 20162252:57:05
  * 
  */
 public class Longest_common_substring {

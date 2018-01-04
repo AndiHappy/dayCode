@@ -18,7 +18,7 @@ public class TestListener implements DocumentListener {
     try {
       String content = e.getDocument().getText(0, value);
       if (content.endsWith("\n")) {
-        System.out.println("·¢ËÍ£º" + content);
+        System.out.println("Í£" + content);
       }
     } catch (BadLocationException e1) {
       // TODO Auto-generated catch block

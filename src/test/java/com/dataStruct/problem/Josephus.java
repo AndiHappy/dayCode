@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * @author zha
  * 
- *         约瑟夫环的问题
+ *         约瑟蚧返
  */
 public class Josephus<T> {
 	private Queue<T> queue;

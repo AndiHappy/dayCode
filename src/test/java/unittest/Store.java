@@ -3,7 +3,7 @@ package unittest;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��7��������11:21:45
+ * @Date 201512711:21:45
  * 
  */
 public class Store {

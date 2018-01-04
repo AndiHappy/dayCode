@@ -5,7 +5,7 @@ import work.base.createData.DataFromFile;
 import work.sort.QuickSort;
 
 /**
- * @author zhailzh ������С��K��Ԫ��
+ * @author zhailzh СKԪ
  */
 public class Al05FindMinK {
 

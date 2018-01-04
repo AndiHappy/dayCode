@@ -27,12 +27,15 @@ public class EchoServer {
 
   public void start() throws Exception {
     NioEventLoopGroup group = new NioEventLoopGroup(); // 3
+    NioEventLoopGroup bossGroup = new NioEventLoopGroup(1);
+    NioEventLoopGroup workerGroup = new NioEventLoopGroup(12);
+	
     try {
       ServerBootstrap b = new ServerBootstrap();
-      b.group(group) // 4
+      b.group(bossGroup, workerGroup) // 4
           .channel(NioServerSocketChannel.class) // 5
-          .localAddress(new InetSocketAddress(port)) // 6
-          .childHandler(new ChannelInitializer<SocketChannel>() { // 7
+          .localAddress(new InetSocketAddress(port)); // 6
+      b.childHandler(new ChannelInitializer<SocketChannel>() { // 7
             @Override
             public void initChannel(SocketChannel ch) throws Exception {
               ch.pipeline().addLast(new EchoServerHandler());

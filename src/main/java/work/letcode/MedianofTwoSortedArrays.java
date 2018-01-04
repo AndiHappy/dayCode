@@ -3,11 +3,11 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��14��������11:20:19
+ * @Date 2015111411:20:19
  * 
- *       �����ź�������� ����λ��
+ *       ź λ
  *       
- *       Tag��Arrays,level2
+ *       TagArrays,level2
  * 
  */
 public class MedianofTwoSortedArrays {
@@ -26,7 +26,7 @@ public class MedianofTwoSortedArrays {
 		
 	}
 
-	// ���������ݵ���С��kֵ,��ΪҪ����log(m+n) �������Ƿ��ն��ֲ���ֱ�Ӻ�����������
+	// ݵСkֵ,ΪҪlog(m+n) ǷնֱֲӺ
 	public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
 		
 		 int m = nums1.length, n = nums2.length;
@@ -53,7 +53,7 @@ public class MedianofTwoSortedArrays {
 	}
 	
 
-	//ת��˼·�����������ݵ���С��kֵ
+	//ת˼·ݵСkֵ
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 	    double now=0;
 	    double pre=0;
@@ -63,7 +63,7 @@ public class MedianofTwoSortedArrays {
 	    int k=0;
 	    while(k<n){
 	        pre = now;
-	        //�����һ�����ݱ��������ˣ���ֱ�������������
+	        //һݱˣֱ
 	        if(i==nums1.length){
 	            now = nums2[j++];
 	        }
@@ -79,7 +79,7 @@ public class MedianofTwoSortedArrays {
 	}
 	
 	
-	//�������ƽ�
+	//ƽ
 	public double findMedianSortedArrays1(int[] nums1, int[] nums2) {
 		int n = nums1.length;
 		int m = nums2.length;
@@ -114,7 +114,7 @@ public class MedianofTwoSortedArrays {
 
 	  private static void quickSort(int[] arrays, int i, int j) {
 	    if (i < 0 || j > arrays.length - 1) {
-	      throw new IllegalArgumentException("����Ĳ���������������ķ�Χ");
+	      throw new IllegalArgumentException("ĲķΧ");
 	    }
 
 	    if (i < j) {

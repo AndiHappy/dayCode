@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
- * @author zhailzh 从控制台直接的循环的读入数据
+ * @author zhailzh
  */
 public class DataFromConsole {
 

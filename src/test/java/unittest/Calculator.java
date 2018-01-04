@@ -1,14 +1,14 @@
 package unittest;
 public class Calculator {
-    private static int result; // ¾²Ì¬±äÁ¿£¬ÓÃÓÚ´æ´¢ÔËĞĞ½á¹û
+    private static int result; // Ì¬Ú´æ´¢Ğ½
     public void add(int n) {
         result = result + n;
     }
     public void substract(int n) {
-        result = result - 1;  //Bug: ÕıÈ·µÄÓ¦¸ÃÊÇ result =result-n
+        result = result - 1;  //Bug: È·Ó¦ result =result-n
     }
     public void multiply(int n) {
-    }         // ´Ë·½·¨ÉĞÎ´Ğ´ºÃ
+    }         // Ë·Î´Ğ´
     public void divide(int n) {
         result = result / n;
     }
@@ -16,9 +16,9 @@ public class Calculator {
         result = n * n;
     }
     public void squareRoot(int n) {
-        for (; ;) ;            //Bug : ËÀÑ­»·
+        for (; ;) ;            //Bug : Ñ­
     }
-    public void clear() {     // ½«½á¹ûÇåÁã
+    public void clear() {     // 
         result = 0;
     }
     public int getResult() {

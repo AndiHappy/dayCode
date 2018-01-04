@@ -19,7 +19,7 @@ import org.springframework.mock.env.MockEnvironment;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��7��������9:20:50
+ * @Date 20151279:20:50
  * 
  */
 @SuppressWarnings("deprecation")
@@ -51,8 +51,8 @@ public class CalculatorTest {
 	public final void testSubstract() {
 		calculator.square(4);
 		int result = calculator.getResult();
-		// �жϷ����ķ��ؽ��
-		assertEquals(16, result);// ��һ������������ֵ���ڶ���������Ҫ��֤��ֵ
+		// жϷķؽ
+		assertEquals(16, result);// һֵڶҪֵ֤
 	}
 
 	/**
@@ -102,8 +102,8 @@ public class CalculatorTest {
 
         String[][] object = {
                 { "2011-07-01 00:20:20", "yyyyMMdd", "20110701" },
-                { "2011-07-01 00:20:20", "yyyy��MM��dd��", "2011��07��01��" },
-                { "2011-07-01 00:20:20", "HHʱmm��ss��", "00ʱ20��20��" } };
+                { "2011-07-01 00:20:20", "yyyyMMdd", "20110701" },
+                { "2011-07-01 00:20:20", "HHʱmmss", "00ʱ2020" } };
         List<String[]> list = Arrays.asList(object);
         return  list;
     }

@@ -3,9 +3,9 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��3��������7:19:03
+ * @Date 20151237:19:03
  * 
- * �������֣������ö���Ŀռ�
+ * ֣öĿռ
  */
 public class PalindromeNumber {
 

@@ -3,9 +3,9 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��13��������2:41:50
+ * @Date 201511132:41:50
  * 
- * Tags��LinkedList,level1
+ * TagsLinkedList,level1
  * 
  */
 public class AddTwoNumbers {

@@ -17,7 +17,7 @@ public class TextListener implements DocumentListener {
     try {
       String content = e.getDocument().getText(0, value);
       if (content.endsWith("\n")) {
-        System.out.println("·¢ËÍ£º" + content);
+        System.out.println("Í£" + content);
         Model.getInstace().firePropertyChange("view", null, content);
       }
     } catch (BadLocationException e1) {

@@ -5,11 +5,11 @@ import work.base.LinkedNode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��6��������4:46:12
+ * @Date 20151164:46:12
  * 
- *       �ж������������Ƿ��ཻ���л����޻�
+ *       жǷཻл޻
  * 
- *       �ཻ���ж����һ��λ���Ƿ��ཻ ��һ���ڵ㣬��Ϊ�����ӵĻ� �жϻ��ĵ�һ���ڵ�
+ *       ཻжһλǷཻ һڵ㣬ΪӵĻ жϻĵһڵ
  */
 public class LinkedListJoin {
 
@@ -17,7 +17,7 @@ public class LinkedListJoin {
 
   }
 
-  // �ж����һ���ڵ�
+  // жһڵ
   public boolean isConNLoop(LinkedNode<?> h1, LinkedNode<?> h2) {
     if (h1 == null || h2 == null)
       return false;
@@ -33,7 +33,7 @@ public class LinkedListJoin {
     return false;
   }
 
-  // �ҵ������ڵ��ཻ�ĵط�
+  // ҵڵཻĵط
   public LinkedNode<?> findPointNLoop(LinkedNode<?> h1, LinkedNode<?> h2) {
     if (h1 == null || h2 == null)
       return null;
@@ -71,7 +71,7 @@ public class LinkedListJoin {
     return loopEntry(h2) != null;
   }
 
-  // �ж��Ƿ��л�
+  // жǷл
   public LinkedNode<?> loopEntry(LinkedNode<?> head) {
     if (head == null)
       return null;

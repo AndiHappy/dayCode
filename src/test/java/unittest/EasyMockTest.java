@@ -10,7 +10,7 @@ import org.junit.Test;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��7��������11:23:02
+ * @Date 201512711:23:02
  * 
  */
 public class EasyMockTest {
@@ -34,7 +34,7 @@ public class EasyMockTest {
 	        EasyMock.expect(storeMock.getPrice("Mead Spiral Bound Notebook, College Rule")).andReturn(5.99);  
 	        EasyMock.expect(storeMock.getPrice("Kindle Fire HD 8.9")).andReturn(499.99);  
 	          
-	            //��ʼʹ��mock  
+	            //ʼʹmock  
 	        EasyMock.replay(storeMock);  
 	                  
 	        Item item1 = new Item("Mead Spiral Bound Notebook, College Rule", 3);  

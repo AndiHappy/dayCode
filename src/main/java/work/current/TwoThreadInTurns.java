@@ -9,7 +9,7 @@ import javax.sql.rowset.FilteredRowSet;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��2��������2:09:58
+ * @Date 20151222:09:58
  * 
  */
 public class TwoThreadInTurns {

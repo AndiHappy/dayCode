@@ -2,10 +2,6 @@ package work.sort;
 
 import java.util.Arrays;
 
-/**
- * 特点：stable sort、In-place sort 思想：通过两两交换，像水中的泡泡一样，小的先冒出来，大的后冒出来。 最坏运行时间：O(n^2)
- * 最佳运行时间：O(n^2)（当然，也可以进行改进使得最佳运行时间为O(n)
- */
 public class BubbleSort {
 
   public static void main(String[] args) {
@@ -17,7 +13,7 @@ public class BubbleSort {
   public static int[] bubbleSort(int[] arrays) {
 
     for (int j = 0; j < arrays.length; j++) {
-      // 如果从arrays.lenth -1 到 j+1 不在起泡，说明顺序已经排好了，就没有必要再次的循环了
+      // arrays.lenth -1  j+1 荩说顺丫藕耍没斜要俅蔚循
       for (int i = arrays.length - 1; i > j; i--) {
         if (arrays[i] < arrays[i - 1]) {
           int temp = arrays[i - 1];
@@ -36,7 +32,7 @@ public class BubbleSort {
       if (flag)
         return arrays;
       flag = true;
-      // 如果从arrays.lenth -1 到 j+1 不在起泡，说明顺序已经排好了，就没有必要再次的循环了
+      // arrays.lenth -1  j+1 荩说顺丫藕耍没斜要俅蔚循
       for (int i = arrays.length - 1; i > j; i--) {
         if (arrays[i] < arrays[i - 1]) {
           int temp = arrays[i - 1];

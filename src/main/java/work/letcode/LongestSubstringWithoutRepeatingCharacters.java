@@ -5,9 +5,9 @@ import java.util.HashMap;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��13��������9:04:21
+ * @Date 201511139:04:21
  * 
- *       ���û���ظ����ַ��� . Given a string, find the length of the longest substring
+ *       ûظַ . Given a string, find the length of the longest substring
  *       without repeating characters. For example, the longest substring
  *       without repeating letters for "abcabcbb" is "abc", which the length is
  *       3. For "bbbbb" the longest substring is "b", with the length of 1.
@@ -40,8 +40,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
 				counter -= occ[ch] - start + 1;
 				start = occ[ch] + 1;
 			}
-			//���Ƕ������ʼ�Ĵ����о����������start ��ʼ��1���о��ĺϺ��߼�������
-			//���� occ[ch] = i+1,�ͱ������,ֻ�ܹ����Ϊ��һ��Ԫ�ص�λ�û��ߣ���ʼ��λ��
+			//ǶʼĴоstart ʼ1оĺϺ߼
+			// occ[ch] = i+1,ͱ,ֻܹΪһԪصλûߣʼλ
 			occ[ch] = i + 1;
 			++counter;
 
@@ -50,7 +50,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return Math.max(max, counter);
 	}
 
-	// ���ö�̬�滮�ķ����������Ҫ�úõ���һ�밡
+	// ö̬滮ķҪúõһ밡
 	public int lengthOfLongestSubstring3(String s) {
 		char[] content = s.toCharArray();
 		HashMap<Character, Integer> charindex = new HashMap<Character, Integer>();
@@ -70,7 +70,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return max > temp ? max : temp;
 	}
 
-	// ������ݵı����ķ���
+	// ݵıķ
 	public int lengthOfLongestSubstring2(String s) {
 		if (s != null && !s.isEmpty()) {
 			char[] content = s.toCharArray();
@@ -79,7 +79,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 			int start = 0;
 			for (int i = 0; i < content.length; i++) {
 				char c = content[i];
-				// ��ʼ��λ����i��������λ������֮��ȵ���һ��λ��j
+				// ʼλiλ֮ȵһλj
 				int j = i;
 				for (; j < content.length; j++) {
 					char cj = content[j];
@@ -90,12 +90,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
 						if (temp > max) {
 							max = temp;
 						}
-						// ������ʱ�򣬿�ʼ���ַ�����ȵ�,���������ַ���λ��
+						// ʱ򣬿ʼַȵ,ַλ
 						int ak = charindex.get(cj);
-						// j Ϊ�����ַ���λ�ã�Ϊ�˲��û��ݣ�ֱ�Ӱ�i��Ϊj,Ȼ������temp��ֵ
+						// j ΪַλãΪ˲ûݣֱӰiΪj,Ȼtempֵ
 						// a1,a2,...,ai,ai+1,...,ak,ak+1,....aj,aj+1
-						// ���ʱ��ai��aj�ľ���Ϊtemp��
-						// ��i��Ϊj֮��temp���ٵľ���Ϊ��ai �� ak-1 ֮���Ԫ�� k-i ���ԣ�
+						// ʱaiajľΪtemp
+						// iΪj֮tempٵľΪai  ak-1 ֮Ԫ k-i ԣ
 						temp = temp - (ak - start);
 
 						for (int k = start; k < ak + 1; k++) {
@@ -113,7 +113,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return 0;
 	}
 
-	// ����ƥ��ķ���
+	// ƥķ
 	public int lengthOfLongestSubstring1(String s) {
 		if (s != null && !s.isEmpty()) {
 			char[] content = s.toCharArray();

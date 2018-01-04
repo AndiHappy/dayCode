@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��18��������9:20:53
+ * @Date 201512189:20:53
  * 
  */
 public class RomantoInteger {
@@ -18,9 +18,9 @@ public class RomantoInteger {
 	}
 
 	 public int romanToInt(String s) {
-	        //����1������5������10��L��50��C��100��D��500��M��1000�� 
-	        // rules:λ�ڴ����ĺ���ʱ����Ϊ������λ�ڴ�����ǰ�����Ϊ����
-	        //eg����=3,��=4,��=6,����=19,����=20,��L��=45,MCM����C=1980
+	        //1510L50C100D500M1000 
+	        // rules:λڴĺʱΪλڴǰΪ
+	        //eg=3,=4,=6,=19,=20,L=45,MCMC=1980
 	        //"DXCXI"
 	        if(s == null || s.length() == 0) return 0;
 	        int len = s.length();

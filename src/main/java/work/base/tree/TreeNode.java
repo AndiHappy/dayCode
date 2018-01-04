@@ -14,9 +14,6 @@ public class TreeNode {
 
   public TreeNode() {};
 
-  /**
-   * 通过数组组建二叉树
-   */
   public static TreeNode newTree(int[] arrays) {
     if (arrays == null || arrays.length == 0) {
       return null;

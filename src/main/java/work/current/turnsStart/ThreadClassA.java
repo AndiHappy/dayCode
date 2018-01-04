@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @author zhailzh
  * 
- * @Date 2015��12��2��������3:41:08
+ * @Date 20151223:41:08
  * 
  */
 public class ThreadClassA extends Thread {
@@ -16,7 +16,7 @@ public class ThreadClassA extends Thread {
 	
 	@Override
 	public void run() {
-		logger.info("�߳�A ���С�������");
+		logger.info("߳A С");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {

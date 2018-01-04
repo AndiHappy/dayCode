@@ -3,9 +3,9 @@ package work.letcode;
 /**
  * @author zhailzh
  * 
- * @Date 2015��11��13��������11:58:10
+ * @Date 2015111311:58:10
  * 
- * Tags��Tree,level0
+ * TagsTree,level0
  */
 
 /**
@@ -33,7 +33,7 @@ public class PopulatingNextRightPointersInEachNode {
 	}
 
 	public static void connect(TreeLinkNode root) {
-		// ��ʼ��
+		// ʼ
 		TreeLinkNode parent = null;
 		makeNext(root, parent);
 	}

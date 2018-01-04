@@ -1,9 +1,5 @@
 package work.base;
 
-/**
- * Á´±í½Úµã
- * 
- */
 public class LinkedNode<E> {
   public E item;
   public LinkedNode<E> next;
