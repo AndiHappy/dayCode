@@ -7,6 +7,7 @@ import org.aopalliance.intercept.MethodInvocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class WebResponseResultLogAop implements MethodInterceptor {
   public static final Logger logger = LoggerFactory.getLogger(WebResponseResultLogAop.class);
 
