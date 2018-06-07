@@ -2,7 +2,6 @@ package io;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.ClosedChannelException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -21,7 +20,7 @@ public class SelectorExample {
 		servChannel.socket().bind(new InetSocketAddress(9999), 1024);
 		// selector 关心 server 上的 ACCEPT 事件
 		servChannel.register(selector, SelectionKey.OP_ACCEPT); 
-
+		servChannel.register(selector, SelectionKey.OP_CONNECT, new SelectorExample());
 		boolean start = true;
 		while (start) {
 		  try {

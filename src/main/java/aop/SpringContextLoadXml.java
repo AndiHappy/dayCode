@@ -19,7 +19,7 @@ public class SpringContextLoadXml {
   public static void main(String[] args) {
     // 创建 Spring 容器
     ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("aop.xml");
-    Business p = ctx.getBean(Business.class);
+    Business p = (Business) ctx.getBean(null, Business.class);
     p.doSomeThing();
     ctx.close();
   }
