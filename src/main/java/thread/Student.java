@@ -1,4 +1,4 @@
-package threadlocal;
+package thread;
 /**
  * Created by IntelliJ IDEA.
  * User: leizhimin
