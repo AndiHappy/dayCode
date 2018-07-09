@@ -8,15 +8,32 @@ import java.util.HashMap;
  * 
  * @Date 201511131:15:37
  * Tags:HashMap,level0
+ * 便利一遍，但是遍历的过程中找到设置hashMap，寻找的时候在hashMap中寻找
  */
-public class TwoSum {
+public class L01TwoSum {
 
 	public static void main(String[] args) {
 		int[] value = new int[]{3,2,4};
-		TwoSum sum = new TwoSum();
+		L01TwoSum sum = new L01TwoSum();
 		System.out.println(Arrays.toString(sum.twoSum(value, 6)));
 
 	}
+	
+	 public int[] twoSum_simple(int[] nums, int target) {
+	        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+	        int[] res = new int[2];
+	        for (int i = 0; i < nums.length; ++i) {
+	            if (m.containsKey(target - nums[i])) {
+	                res[0] = i;
+	                res[1] = m.get(target - nums[i]);
+	                break;
+	            }
+	            m.put(nums[i], i);
+	        }
+	        return res;
+	    }
+		
+	 
 	public int[] twoSum(int[] nums, int target) {
 		HashMap<Integer, Integer> temp = new HashMap<Integer, Integer>();
 		for (int i = 0; i < nums.length; i++) {
@@ -30,8 +47,6 @@ public class TwoSum {
 			}
 			temp.put(nums[i], i);
 		}
-		temp.clear();
-		temp = null;
 		return null;
 	}
 	

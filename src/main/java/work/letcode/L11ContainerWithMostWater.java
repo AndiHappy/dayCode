@@ -6,7 +6,7 @@ package work.letcode;
  * @Date 2015121110:10:17
  * 
  */
-public class ContainerWithMostWater {
+public class L11ContainerWithMostWater {
 
 	// Given n non-negative integers a1, a2, ..., an,
 	// where each represents a point at coordinate (i, ai).
@@ -17,25 +17,26 @@ public class ContainerWithMostWater {
 	// the most water.
 
 	public static void main(String[] args) {
-		int[] h = new int[]{166,63,82,92,144,186,192,68,101,179,50,170,141,31,149,131,180,94,168,142,91,137,159,184,89,135,101,21,70,191,136,37,7,18,81,103,4,26,171,106,5,173,28,99,4,129,30,185,23,198,127,67,88,39,51,129,126,104,150,196,48,38,185,7,56,19,110,12,45,33,70,50,7,98,149,163,179,131,100,3,82,180,70,170,171,73,51,97,130,153,45,130,191,31,137,199,2,199,11,47};
+		int[] h = new int[]{166,63,82,92,144,186,192,68,101,179,50,170,141,31,149,131,180,94,
+				168,142,91,137,159,184,89,135,101,21,70,191,136,37,7,18,81,103,4,26,171,106,5,173,28,
+				99,4,129,30,185,23,198,127,67,88,39,51,129,126,104,150,196,48,38,185,7,56,19,110,12,
+				45,33,70,50,7,98,149,163,179,131,100,3,82,180,70,170,171,73,51,97,130,153,45,130,191,31,137,199,2,199,11,47};
 		int[] hg =new int[]{1,5,5,1};
 		System.out.println(maxArea(hg));
 
 	}
 
 	/**
-	 * Ҫ
+	 * 1. 理解题目，所找到的只是两个index的之间的面积最大，并不是总的面积最大
+	 * 2. 这样的话，就需要想要index的移动的规律的总结，谁矮移动谁
 	 * */
 	public static int maxArea(int[] height) {
 	    int maxA = 0;
-
 	    int i = 0, j = height.length-1;
-
 	    while(i < j) {
 	        int H = Math.min(height[i], height[j]);
 	        int W = j - i;
 	        maxA = Math.max(maxA, H*W);
-
 	        while(i < j && height[i] <= H) {
 	            ++i;
 	        }
@@ -46,7 +47,6 @@ public class ContainerWithMostWater {
 	    return maxA;
 	}	
 	
-	//ݹ㷨
 	public static int maxArea2(int[] height) {
 		return maxAreabyDP(height,height.length -1);
 	}
@@ -78,9 +78,7 @@ public class ContainerWithMostWater {
 
 
 	public int maxArea1(int[] height) {
-		// ĸ
 		int[] flags = new int[height.length - 1];
-		// flagһ
 		for (int i = 1; i < height.length; i++) {
 			int first = height[i - 1];
 			int seconde = height[i];

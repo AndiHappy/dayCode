@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class ThreadLocalDemo implements Runnable {
 // 创建线程局部变量studentLocal，在后面你会发现用来保存Student对象
-private final static ThreadLocal studentLocal = new ThreadLocal();
+private final static ThreadLocal<Object> studentLocal = new ThreadLocal<Object>();
+private final static ThreadLocal<Object> studentLocal2 = new ThreadLocal<Object>();
 
 public static void main(String[] agrs) {
 	ThreadLocalDemo td = new ThreadLocalDemo();
@@ -32,13 +33,16 @@ public void accessStudent() {
 	// 获取一个Student对象，并将随机数年龄插入到对象属性中
 	Student student = getStudent();
 	student.setAge(age);
-	System.out.println("thread " + currentThreadName + " first read age is:" + student.getAge());
+	ThreadLocalDemo.studentLocal.set("stringvalue");
+	ThreadLocalDemo.studentLocal2.set("stringvalue2");
+
+	System.out.println("thread " + currentThreadName + " first read age is:" +ThreadLocalDemo.studentLocal.get());
 	try {
 		Thread.sleep(500);
 	} catch (InterruptedException ex) {
 		ex.printStackTrace();
 	}
-	System.out.println("thread " + currentThreadName + " second read age is:" + student.getAge());
+	System.out.println("thread " + currentThreadName + " second read age is:" + ThreadLocalDemo.studentLocal.get());
 }
 
 protected Student getStudent() {

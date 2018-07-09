@@ -1,23 +1,24 @@
 package work.letcode;
 
-import javax.management.DescriptorKey;
-
 /**
  * @author zhailzh
  * 
- * @Date 201511162:17:16 ĻĴ
+ * @Date 201511162:17:16
+ * 
+ * 
  * 
  */
-public class LongestPalindromicSubstring {
+public class L05LongestPalindromicSubstring {
 
 	public static void main(String[] args) {
 		String value = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
-		LongestPalindromicSubstring lo = new LongestPalindromicSubstring();
+		L05LongestPalindromicSubstring lo = new L05LongestPalindromicSubstring();
 		System.out.println(lo.longestPalindrome(value));
+		System.out.println(lo.longestPalindrome1("abavalueeula"));
+
 	}
 	
-	//̬滮ʲôʱʹö̬滮Լһä
-	//
+	
 	public String longestPalindrome(String s) {
 		  int n = s.length();
 		  String res = null;
@@ -36,8 +37,61 @@ public class LongestPalindromicSubstring {
 
 		  return res;
 		}
+	
+	/**
+	 * 
+	 * */
+	public String longestPalindrome1(String s) {
+		if(s == null || s.length() < 2){
+			return s;
+		}
+		  int n = s.length();
+		  int max = 0;
+		  int right =0;
+		  int left = 0;
+		  boolean[][] dp = new boolean[n][n];
 
-	//ƽ,ֱӵĳʱ
+		  for(int j = 1;j< n;j++){
+			  for (int i = 0; i < j; i++) {
+				  boolean isInnerWordPalindrom = dp[i+1][j-1] || (j-i <=2);
+				  if(s.charAt(i) == s.charAt(j) && isInnerWordPalindrom){
+					  dp[i][j] = true;
+					  if((j -i + 1) > max){
+						  max = j-i+1;
+						  left = i;
+						  right = j;
+					  }
+				  }
+			}
+		  }
+		  return s.substring(left, right+1);
+		}
+	
+	public String longestPalindrome2(String s) {
+		if(s == null || s.length() < 2){
+			return s;
+		}
+		  int n = s.length();
+		  int max = 0;
+		  int right =0;
+		  int left = 0;
+		  boolean[][] dp = new boolean[n][n];
+
+		  for(int j = 1;j< n;j++){
+			  for (int i = 0; i < j; i++) {
+				  if((s.charAt(i) == s.charAt(j) &&  dp[i+1][j-1] ) || (s.charAt(i) == s.charAt(j) && (j-i <=2))){
+					  dp[i][j] = true;
+					  if((j -i + 1) > max){
+						  max = j-i+1;
+						  left = i;
+						  right = j;
+					  }
+				  }
+			}
+		  }
+		  return s.substring(left, right+1);
+		}
+
 	@Deprecated
 	public String longestPalindrome_isWrong(String s) {
 		int temp = 0;int tempi = 0; int tempj = 0;

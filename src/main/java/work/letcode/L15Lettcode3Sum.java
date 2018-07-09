@@ -11,7 +11,7 @@ import java.util.List;
  * @Date 201512204:50:24
  * 
  */
-public class Lettcode3Sum {
+public class L15Lettcode3Sum {
 
 	// Given an array S of n integers, are there elements a, b, c in S such that
 	// a + b + c = 0? Find all unique triplets in the array which gives the sum
@@ -28,17 +28,12 @@ public class Lettcode3Sum {
 	// (-1, -1, 2)
 	//
 	/***
-	 * Լ뵽0ΪȻźԺҵļλãȻλãѡ ߵԪء
-	 * 
-	 * ԵķԼˣû⣬źǾܹʣµԪƵĲ
+	 *
 	 */
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
-		// ݿʼ
 		Arrays.sort(nums);
-		// Ȼѭȷһֵڶֵ͵ֵĺ;
 		for (int i = 0; i < nums.length - 2; i++) {
-			//Ƶķǳ˼
 			if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
 				int from = i + 1;
 				int end = nums.length - 1;
@@ -89,10 +84,51 @@ public class Lettcode3Sum {
 		}
 		return res;
 	}
+	
+	public int[] quikSort(int[] num){
+		if(num == null || num.length < 2){
+			return num;
+		}
+		int len = num.length;
+		quicksort(num,0,len-1);
+		
+		
+		return num;
+	}
+
+	private void quicksort(int[] num, int start, int end) {
+		if(start < end){
+			int index = quickindex(num,start,end);
+			quicksort(num, start, index-1);
+			quicksort(num, index+1, end);
+		}
+		
+	}
+
+	private int quickindex(int[] num, int start, int end) {
+		int key = num[start];
+		int change = start+1;
+		for (int i = start+1; i <= end; i++) {
+			if(num[i] < key){
+				swap(num,i,change);
+				change++;
+			}
+		}
+		swap(num, start, change-1);
+		return change - 1;
+	}
+
+	private void swap(int[] num, int i, int change) {
+		int tmp = num[i];
+		num[i] = num[change];
+		num[change] = tmp;
+	}
 
 	public static void main(String[] args) {
-		Lettcode3Sum sm = new Lettcode3Sum();
-		int[] nums = new int[] {1,-1,-1,0 };
+		L15Lettcode3Sum sm = new L15Lettcode3Sum();
+		int[] nums = new int[] {4,3,2,5,6,0 };
+//		System.out.println(sm.quickindex(nums, 0, nums.length-1));
+		System.out.println(Arrays.toString((sm.quikSort(nums))));
 		List<List<Integer>> res = sm.threeSum(nums);
 		System.out.println(res.toString());
 	}

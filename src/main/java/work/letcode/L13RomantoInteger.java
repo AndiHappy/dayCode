@@ -8,20 +8,16 @@ import java.util.HashMap;
  * @Date 201512189:20:53
  * 
  */
-public class RomantoInteger {
+public class L13RomantoInteger {
 
 	public static void main(String[] args) {
-		RomantoInteger ri = new RomantoInteger();
+		L13RomantoInteger ri = new L13RomantoInteger();
 		int value = ri.romanToInt("DXCXI");
 		System.out.println(value);
 
 	}
 
 	 public int romanToInt(String s) {
-	        //1510L50C100D500M1000 
-	        // rules:λڴĺʱΪλڴǰΪ
-	        //eg=3,=4,=6,=19,=20,L=45,MCMC=1980
-	        //"DXCXI"
 	        if(s == null || s.length() == 0) return 0;
 	        int len = s.length();
 	        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
@@ -32,6 +28,7 @@ public class RomantoInteger {
 	        map.put('C',100);
 	        map.put('D',500);
 	        map.put('M',1000);
+	        
 	        int result = map.get(s.charAt(len -1));
 	        int pivot = result;
 	        for(int i = len -2; i>= 0;i--){

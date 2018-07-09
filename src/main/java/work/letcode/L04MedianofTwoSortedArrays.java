@@ -5,20 +5,33 @@ package work.letcode;
  * 
  * @Date 2015111411:20:19
  * 
- *       ź λ
- *       
- *       TagArrays,level2
- * 
+ *       Tag Arrays,level2
+There are two sorted arrays nums1 and nums2 of size m and n respectively.
+
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+
+Example 1:
+nums1 = [1, 3]
+nums2 = [2]
+
+The median is 2.0
+Example 2:
+nums1 = [1, 2]
+nums2 = [3, 4]
+
+The median is (2 + 3)/2 = 2.5
+
+
  */
-public class MedianofTwoSortedArrays {
+public class L04MedianofTwoSortedArrays {
 
 	public static void main(String[] args) {
 
-		MedianofTwoSortedArrays st = new MedianofTwoSortedArrays();
+		L04MedianofTwoSortedArrays st = new L04MedianofTwoSortedArrays();
 		
 		int[] nums1 = new int[]{2,3,4,5,6};
 		int[] nums2 = new int[]{1};
-		double value1 = st.findMedianSortedArrays(nums1, nums2);
+		double value1 = st.findMedianSortedArrays1(nums1, nums2);
 		System.out.println(value1);
 		
 		double value2 = st.findMedianSortedArrays2(nums1, nums2);
@@ -26,9 +39,8 @@ public class MedianofTwoSortedArrays {
 		
 	}
 
-	// ݵСkֵ,ΪҪlog(m+n) ǷնֱֲӺ
-	public double findMedianSortedArrays2(int[] nums1, int[] nums2) {
-		
+
+	public double findMedianSortedArrays2(int[] nums1, int[] nums2) {		
 		 int m = nums1.length, n = nums2.length;
 	        int l = (m + n + 1) / 2;
 	        int r = (m + n + 2) / 2;
@@ -53,7 +65,6 @@ public class MedianofTwoSortedArrays {
 	}
 	
 
-	//ת˼·ݵСkֵ
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 	    double now=0;
 	    double pre=0;
@@ -63,7 +74,6 @@ public class MedianofTwoSortedArrays {
 	    int k=0;
 	    while(k<n){
 	        pre = now;
-	        //һݱˣֱ
 	        if(i==nums1.length){
 	            now = nums2[j++];
 	        }
@@ -78,32 +88,22 @@ public class MedianofTwoSortedArrays {
 	    return (nums1.length+nums2.length)%2==1?now:(pre+now)/2;
 	}
 	
-	
-	//ƽ
+	/**
+	 * 手动写快排
+	 * */
 	public double findMedianSortedArrays1(int[] nums1, int[] nums2) {
 		int n = nums1.length;
 		int m = nums2.length;
 		int[] sum = new int[nums1.length+ nums2.length];
 		for (int i = 0; i < sum.length; i++) {
-			if(n > 0){
-				if(i> n-1){
-					sum[i] = nums2[i-n];
-				}else{
-					sum[i] = nums1[i];	
-				}
-			}else if(m > 0){
-				if(i> m-1){
-					sum[i] = nums2[i-m];
-				}else{
-					sum[i] = nums2[i];	
-				}
+			if(i < n){
+				sum[i] = nums1[i];
 			}else{
-				return 0;
+				sum[i] = nums2[i-n];
 			}
 		}
 		
 		quickSort(sum);
-		
 		double median=(double) ((n+m)%2 == 1? sum[(n+m)>>1]:(sum[(n+m-1)>>1]+sum[(n+m)>>1])/2.0); 
 		return median;
 	}
@@ -114,7 +114,7 @@ public class MedianofTwoSortedArrays {
 
 	  private static void quickSort(int[] arrays, int i, int j) {
 	    if (i < 0 || j > arrays.length - 1) {
-	      throw new IllegalArgumentException("ĲķΧ");
+	      throw new IllegalArgumentException("wrong para");
 	    }
 
 	    if (i < j) {
@@ -142,8 +142,6 @@ public class MedianofTwoSortedArrays {
 	    arrays[ii] = arrays[k];
 	    arrays[k] = temp;
 	  }
-
-	
 	
 }
 
