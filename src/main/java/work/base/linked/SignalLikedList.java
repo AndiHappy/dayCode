@@ -36,7 +36,6 @@ public class SignalLikedList<E> {
         first = newLinkedNode;
         last = first;
       } else {
-        // Ԫ,ͷ巨
         LinkedNode<E> newLinkedNode = new LinkedNode<E>(null, e, first);
         first = newLinkedNode;
       }
@@ -46,7 +45,7 @@ public class SignalLikedList<E> {
   }
 
   /**
-   * index λ֮ mԪصԪ
+   * index 
    */
   private boolean addAll(int index, Collection<? extends E> c) {
     checkPositionIndex(index);

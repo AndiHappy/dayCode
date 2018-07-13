@@ -9,9 +9,8 @@ import java.util.List;
  * 
  * @Date 20161209:06:58
  * 
- *       绰ĸ
  */
-public class LetterCombinationsofaPhoneNumber {
+public class L17LetterCombinationsofaPhoneNumber {
 	
 	
 	
@@ -44,13 +43,15 @@ public class LetterCombinationsofaPhoneNumber {
 	private static String[][] refer={{},{},{"a","c","b"},{"d","e","f"},
 	        {"g","h","i"},{"j","k","l"},{"m","n","o"},{"p","q","r","s"},
 	        {"t","u","v"},{"w","x","y","z"}};
+	
+	
+	
 	public List<String> letterCombinations1(String digits) {
-		List<String> res = new ArrayList<String>();
-		
+		List<String> res = new ArrayList<String>();	
 		if (digits == null || digits.isEmpty()) {
 			return res;
 		}
-		//ʹѭķ
+		
 		for (int i = 0; i < digits.length(); i++) {
 			int value = digits.charAt(i)-'0';
 			if(value >1){
@@ -155,7 +156,7 @@ public class LetterCombinationsofaPhoneNumber {
 	
 
 	public static void main(String[] args) {
-		LetterCombinationsofaPhoneNumber num = new LetterCombinationsofaPhoneNumber();
+		L17LetterCombinationsofaPhoneNumber num = new L17LetterCombinationsofaPhoneNumber();
 		System.out.println(num.letterCombinations1("234"));
 	}
 
