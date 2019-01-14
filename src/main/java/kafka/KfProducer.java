@@ -29,9 +29,9 @@ public class KfProducer {
 
 	static {  //public KfProducer() {
 		Properties props = new Properties();
-		props.put("zk.connect", "127.0.0.1:2181");
+		props.put("zk.connect", "XXXXX:2181");
 		props.put("producer.type", "async");
-		props.put("bootstrap.servers", "127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094");
+		props.put("bootstrap.servers", "XXXXXX:9093");
 		props.put("client.id", "DemoProducer");
 		props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");

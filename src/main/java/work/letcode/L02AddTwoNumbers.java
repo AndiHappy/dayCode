@@ -81,4 +81,9 @@ class ListNode {
 		}
 		return value;
 	}
+	
+	public boolean equals(ListNode obj) {
+		// TODO Auto-generated method stub
+		return this.val == obj.val;
+	}
 }

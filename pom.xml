@@ -73,13 +73,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<version>1.0.26</version>
 		</dependency>
 
+		<!-- logback 日志文件 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>log4j-over-slf4j</artifactId>
 			<version>1.7.16</version>
 		</dependency>
 
-		<!-- logback 日志文件 -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
@@ -273,10 +273,14 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+		<!-- <dependency> <groupId>org.apache.kafka</groupId> <artifactId>kafka_2.12</artifactId> 
+			<version>1.0.0</version> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_2.12</artifactId>
-			<version>1.0.0</version>
+			<artifactId>kafka_2.11</artifactId>
+			<version>0.8.2.1</version>
 		</dependency>
 
 		<dependency>

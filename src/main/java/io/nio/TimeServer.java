@@ -17,11 +17,6 @@ package io.nio;
 
 import java.io.IOException;
 
-/**
- * @author lilinfeng
- * @date 2014年2月14日
- * @version 1.0
- */
 public class TimeServer {
 
     /**
