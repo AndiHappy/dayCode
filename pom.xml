@@ -127,7 +127,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.0.25.Final</version>
+			<version>4.1.42.Final</version>
 		</dependency>
 
 		<!-- java 分析html页面 -->
@@ -158,7 +158,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.0.0.Final</version>
+			<version>4.1.42.Final</version>
 		</dependency>
 
 
